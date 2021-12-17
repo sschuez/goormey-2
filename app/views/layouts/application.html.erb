@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Goormey2</title>
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <%= render 'shared/facebook_open_graph_data' %>
+    <!-- Twitter Card data -->
+    <%= render 'shared/twitter_card_data' %> 
+   
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +18,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+
+    <div class="background-main">
+      <%= yield %>
+      <%= render 'shared/contact' %>
+    </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
